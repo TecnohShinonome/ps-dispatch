@@ -131,7 +131,7 @@ Config.Blips = {
         offset = false,
         flash = false
     },
-    ['911call'] = {
+    ['110call'] = {
         radius = 0,
         sprite = 480,
         color = 1,
@@ -142,7 +142,7 @@ Config.Blips = {
         offset = false,
         flash = false
     },
-    ['311call'] = {
+    ['119all'] = {
         radius = 0,
         sprite = 480,
         color = 3,

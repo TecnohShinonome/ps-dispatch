@@ -574,7 +574,7 @@ local function PhoneCall(message, anonymous, job, type)
 
         local dispatchData = {
             message = anonymous and locale('anon_call') or locale('call'),
-            codeName = type == '311' and '311call' or '911call',
+            codeName = type == '119' and '119call' or '110call',
             code = type,
             icon = 'fas fa-phone',
             priority = 2,
@@ -602,10 +602,10 @@ RegisterNetEvent('ps-dispatch:client:sendEmergencyMsg', function(data, type, ano
     if spamdetek < 0 then spamdetek = Config.AlertCommandCooldown end
     if spamdetek <= Config.AlertCommandCooldown and pslastaction > 0 then
     pslastaction = idtrack
-    QBCore.Functions.Notify("Command on cooldown", "error")
+    QBCore.Functions.Notify("コマンドのクールダウン", "error")
     else
     pslastaction = idtrack
-    local jobs = { ['911'] = { 'leo' }, ['311'] = { 'ems' } }
+    local jobs = { ['110'] = { 'leo' }, ['119'] = { 'ems' } }
     PhoneCall(data, anonymous, jobs[type], type)
     end
 end)

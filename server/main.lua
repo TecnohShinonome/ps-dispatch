@@ -74,34 +74,34 @@ lib.addCommand('dispatch', {
     TriggerClientEvent("ps-dispatch:client:openMenu", source, calls)
 end)
 
-lib.addCommand('911', {
-    help = 'Send a message to 911',
-    params = { { name = 'message', type = 'string', help = '911 Message' }},
+lib.addCommand('110', {
+    help = '110番へメッセージを送信',
+    params = { { name = 'message', type = 'string', help = '110 通報' }},
 }, function(source, args, raw)
     local fullMessage = raw:sub(5)
-    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "911", false)
+    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "110", false)
 end)
-lib.addCommand('911a', {
-    help = 'Send an anonymous message to 911',
-    params = { { name = 'message', type = 'string', help = '911 Message' }},
+lib.addCommand('110a', {
+    help = '110番へ匿名でメッセージを送る',
+    params = { { name = 'message', type = 'string', help = '110 匿名通報' }},
 }, function(source, args, raw)
     local fullMessage = raw:sub(5)
-    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "911", true)
-end)
-
-lib.addCommand('311', {
-    help = 'Send a message to 311',
-    params = { { name = 'message', type = 'string', help = '311 Message' }},
-}, function(source, args, raw)
-    local fullMessage = raw:sub(5)
-    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "311", false)
+    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "110", true)
 end)
 
-lib.addCommand('311a', {
-    help = 'Send an anonymous message to 311',
-    params = { { name = 'message', type = 'string', help = '311 Message' }},
+lib.addCommand('119', {
+    help = '119番へメッセージを送る',
+    params = { { name = 'message', type = 'string', help = '119 通報' }},
 }, function(source, args, raw)
     local fullMessage = raw:sub(5)
-    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "311", true)
+    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "119", false)
+end)
+
+lib.addCommand('119a', {
+    help = '119番への匿名メッセージを送る',
+    params = { { name = 'message', type = 'string', help = '119 匿名通報' }},
+}, function(source, args, raw)
+    local fullMessage = raw:sub(5)
+    TriggerClientEvent('ps-dispatch:client:sendEmergencyMsg', source, fullMessage, "119", true)
 end)
 
